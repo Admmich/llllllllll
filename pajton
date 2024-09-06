@@ -19,3 +19,18 @@ print(listreturnlen(owoce))
 print(listlena(owoce))
 ----------------------------------------------------------------------
 
+def sumawierszy(lista):
+    return [sum(i) for i in lista]
+def sumakolumn(lista):
+    res = []
+    for i in range(len(lista)):
+        suma = 0
+        for j in range(len(lista[i])):
+            suma += lista[j][i]
+        res.append(suma)
+    return res
+
+print(sumawierszy(lista))
+print(sumakolumn(lista))
+sumawierszy = [6, 15, 24]
+sumakolumn = [12, 15, 18]
