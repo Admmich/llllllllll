@@ -1,8 +1,0 @@
-import random
-lista = []
-def los (x):
-    for i in range(x):
-        lista.append(random.randint(0,100))
-los(5)
-print(lista)
-

@@ -1,0 +1,14 @@
+import random
+lista = []
+def los (x):
+    for i in range(x):
+        lista.append(random.randint(0,100))
+los(5)
+print(lista)
+-----------------------------------------------------------------------------
+owoce = ['gruszka','ananas','banan','kiwi','granat']
+def listreturnlen(lista):
+    return [len(i) for i in lista]
+
+print(listreturnlen(owoce))
+
