@@ -39,3 +39,39 @@ print(sumawierszy(lista))
 print(sumakolumn(lista))
 sumawierszy = [6, 15, 24]
 sumakolumn = [12, 15, 18]
+
+-----------------------------------
+plik = "dane.txt"
+with open(plik, "r")as file:
+    for line in file:
+        print(line) jak
+
+
+
+
+# plik = "dane.txt"
+# with open(plik, "r")as file:
+# lista=[]
+#     for line in file:
+#         for line in file:
+#             lista.append(int(line))
+#         print(lista)
+# plik = "owoce"
+# lista1=[]
+# with open(plik,"r") as file1:
+#     for line in file1:
+#         lista1.append(line.strip())
+#
+# lista2=[]
+# for i in lista1:
+#     if (i == i [::-1]):
+#         print(i)
+#     else:
+#         print((i.count("a")))
+
+def palindrom(s):
+    for i in range(len(s)//2):
+        if s[i]!=s[-1-i]:
+            return False
+        return True
+print(palindrom("kajak"))
