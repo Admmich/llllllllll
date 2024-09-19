@@ -75,3 +75,5 @@ def palindrom(s):
             return False
         return True
 print(palindrom("kajak"))
+
+
