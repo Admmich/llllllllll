@@ -1520,3 +1520,22 @@ print(palindrom("kajak"))
 from random import randint
 lista=[randint(1000, 999999999999999999) for i in range(1000)]
 print(lista)
+
+
+
+def pal(liczba):
+   liczba = str(liczba)
+   for i in liczba:
+       if i == i[::-1]:
+            return True
+       return False
+print(pal(1234))
+print(pal(121))
+
+
+def palindrom(liczba):
+    liczba = str(liczba)
+    for i in range(len(liczba) // 2):
+        if (liczba[i] != liczba[len(liczba) - i - 1]:
+            return False
+        return True
