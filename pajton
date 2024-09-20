@@ -1593,3 +1593,31 @@ min()
         if (liczba[i] != liczba[len(liczba) - i - 1]:
             return False
         return True
+
+
+#tuple
+#sa literitalne i zwracaja czesc elementow i moga byc kraszowalne czyli moga byc ktorka nazwac elemnty w slowniku mozemy nazywac elemantami krotki to czesc elementu slownieka
+zienna = (1,2,3,'a','b','c')
+print(zienna)
+
+
+lista = (1,2,3,'a','b','c')
+a = tuple(lista)
+print(a)
+
+napis = "programowanie"
+n = tuple(napis)
+print(n)
+
+liczba = [10001]
+l = tuple(liczba)
+print(l)
+
+#stworz tuple z ocen ucznia uzyj metody count do zliczenia wystapien danej oceny
+
+oceny = (1,2,3,4,1,2,2,1,2,3)
+print(oceny.count(5))
+print(oceny.count(1))
+
+
+przechowaj wsplzende punktow z tupli ktyrych kazdy emelent to para spulzendych x i y x y reprezentuje trujaka on\blicz jego pole
