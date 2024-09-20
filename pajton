@@ -1535,6 +1535,60 @@ print(pal(121))
 
 def palindrom(liczba):
     liczba = str(liczba)
+
+
+
+
+# def suma_k(n):
+#     suma=0
+#     while n > 0:
+#         cyfra = n % 10
+#         kwadrat_c = cyfra ** 2
+#         suma = suma + kwadrat_c
+#         n = n //10
+#     return suma
+#
+# print(suma_k(34))
+#
+# def wesola(n):
+#     lista_l =[]
+#     while n!=1 and n not in lista_l:
+#         lista_l.append(n)
+#         n = suma_k(n)
+#     return n
+#
+# print(wesola)
+
+
+
+parzyste=[]
+nieparzyste=[]
+wszytkie=[]
+def dk():
+    a=1
+    while a < 2:
+        liczby = int(input("podaj liczby"))
+        if liczby %2 == 0:
+            parzyste.append(liczby)
+        else:
+            nieparzyste.append(liczby)
+        wszytkie.append(liczby)
+        if liczby == 0:
+            a = a+1
+    return (parzyste,nieparzyste,wszytkie)
+z = dk()
+print(z[0])
+print(z[1])
+print(z[2])
+
+sorted([2,5,0,1])
+
+[1,4,5,0].sort()
+reverse()
+sum()
+len()
+max()
+min()
     for i in range(len(liczba) // 2):
         if (liczba[i] != liczba[len(liczba) - i - 1]:
             return False
