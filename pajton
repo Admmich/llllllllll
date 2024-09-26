@@ -1620,4 +1620,4 @@ print(oceny.count(5))
 print(oceny.count(1))
 
 
-przechowaj wsplzende punktow z tupli ktyrych kazdy emelent to para spulzendych x i y x y reprezentuje trujaka on\blicz jego pole
+
