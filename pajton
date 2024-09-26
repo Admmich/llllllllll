@@ -1620,4 +1620,57 @@ print(oceny.count(5))
 print(oceny.count(1))
 
 
+# #klucz: wartosc
+# dictnew = {
+#     'imie': 'Jan'
+#     'wiek': 11
+# }
+#
+#
+# dictnew2 = {
+#     "lista": [1,2,3,4]
+# }
+# print(dictnew['imie'])
+# print(dictnew)
+#
+# for i in dictnew:
+#     print(i)
+# for i in dictnew:
+#     print(dictnew[i,":",dictnew[i]])
+#
+# print(dictnew2['lista'][1])
+# for i in dictnew2['lista']:
+#     print()
+
+towar = {
+    'mars': 10,
+    'orion': 13,
+    'princeplo': 5
+}
+print(towar)
+towar['orion'] = 30
+print(towar)
+
+liczby = {
+    1: 100000,
+    2: 333333,
+    4: 55555555
+}
+print(liczby[2])
+print(type(liczby))
+
+
+print(liczby.keys())
+print(liczby.items())
+print(liczby.get(1))
+
+
+
+
+print(liczby)
+liczby.clear()
+print(liczby)
+
+
+
 
