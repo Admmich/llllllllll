@@ -1697,3 +1697,20 @@ print(x)
 x.update(y)
 print(x)
 
+def ileA(n):
+    ile = 0
+    for z in n:
+        if z == 'A':
+            ile += 1
+    if ile > len(n)*0.3:
+        return True
+    return False
+
+
+def zadanie(d):
+    t = []
+    for i in d:
+        if ileA(d[i]):
+            t.append(i.key())
+    return t
+print(zadanie(geny))
