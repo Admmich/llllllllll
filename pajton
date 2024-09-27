@@ -1672,5 +1672,28 @@ liczby.clear()
 print(liczby)
 
 
+d = {'a': 20, 'b': 10, 'c': 15}
+print(d.get('b'))
+if d.get('z') != None:
+    print('istnieje')
+else:
+    print('brak w dict.')
 
+g = {'a': 20, 'b': 10, 'c': 15}
+p = list(g.items())
+print(p)
+print(p[0])
+print(p[1][1])
+
+g.pop('b')
+print(g)
+g.popitem()
+print(g)
+
+
+x = {'a': 10, 'b': 40, 'c': 100}
+y = {'b': 10000, 'd': 10000}
+print(x)
+x.update(y)
+print(x)
 
