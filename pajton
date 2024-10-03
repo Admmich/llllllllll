@@ -1727,6 +1727,27 @@ with open('dane_geny.txt') as file:
 lista = []
 print(geny)
 for i in geny.values():
+
+
+
+geny = {}
+with open('dane_geny.txt') as file:
+    for index, line in enumerate(file):
+        geny.update({index:line.strip()})
+
+
+for i in geny.items():
+    print(i)
+
+
+
+lista = []
+print(geny)
+for i in geny.values():
+    if len(i[1]) > 30:
+        if i[1].count("AAABBB") >= 2:
+            lista.append(i[0])
+print(lista)
     if len(i) > 30:
         if i.count("AAABBB") >= 2:
             lista.append(i)
