@@ -1714,3 +1714,20 @@ def zadanie(d):
             t.append(i.key())
     return t
 print(zadanie(geny))
+
+
+
+geny = {}
+with open('dane_geny.txt') as file:
+    for index, line in enumerate(file):
+        geny.update({index:line.strip()})
+
+
+
+lista = []
+print(geny)
+for i in geny.values():
+    if len(i) > 30:
+        if i.count("AAABBB") >= 2:
+            lista.append(i)
+print(lista)
