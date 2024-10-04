@@ -1752,3 +1752,78 @@ print(lista)
         if i.count("AAABBB") >= 2:
             lista.append(i)
 print(lista)
+
+
+
+# geny = {}
+# with open('dane_geny.txt') as file:
+#     for index, line in enumerate(file):
+#         geny.update({index:line.strip()})
+#
+#
+# for i in geny.items():
+#     print(i)
+#
+#
+#
+# lista = []
+# print(geny)
+# for i in geny.values():
+#     if len(i[1]) > 30:
+#         if i[1].count("AAABBB") >= 2:
+#             lista.append(i[0])
+# print(lista)
+
+
+
+#utworz slownik produkow w magazynie produkty maja byc zapisane tak
+
+produkt = {
+    'ser': {'ilosc': 10,'cena': 3},
+    'twarog': {'ilosc': 20,'cena': 5},
+    'cipsy': {'ilosc': 110, 'cena': 8},
+    'jajka': {'ilosc': 123, 'cena': 10},
+    'kurczak': {'ilosc': 100, 'cena': 20},
+    'tunczyk': {'ilosc': 30, 'cena': 6},
+    'fasola': {'ilosc': 40, 'cena': 12},
+    'woda': {'ilosc': 1111, 'cena': 2},
+    'maka': {'ilosc': 150, 'cena': 4},
+
+}
+
+def pokazmagzyn(produkt):
+    print("caly magazyn")
+    for prodktt, dane in produkt.items():
+        print((f"{prodktt}: Ilosc: {dane['ilosc']}. cena: {dane['cena']} $"))
+    pass
+
+def stanmagaznu(produkt):
+    kwota = 0
+    for prodktt, dane in produkt.items():
+        kwota += dane['ilosc'] * dane['cena']
+    return f"stan magazynu {kwota}$."
+
+def dodajprodukt(produkt, produktt, ilosc, cena):
+    if produktt in produkt:
+        return f"produkt ejst w magzynie"
+    produkt[produktt] = {'ilosc': ilosc, 'cena': cena}
+    return f"produktt: {produktt} dodan do magazynu"
+
+
+
+def zmienpoduskwmagaznie(produkt, produktt, ilosc):
+    if produktt in produkt:
+        produkt[produktt]['ilosc']= ilosc
+        return f"zmienono {produktt}."
+    else:
+        return f"{produktt} nie istnieje "
+
+def menu():
+    pass
+
+pokazmagzyn(produkt)
+print(stanmagaznu(produkt))
+print(dodajprodukt(produkt, "ser", 100))
+pokazmagzyn(produkt)
+print(zmienpoduskwmagaznie(produkt, "ser", 1))
+pokazmagzyn(produkt)
