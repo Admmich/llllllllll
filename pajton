@@ -1831,3 +1831,14 @@ print(dodajprodukt(produkt, "ser", 100))
 pokazmagzyn(produkt)
 print(zmienpoduskwmagaznie(produkt, "ser", 1))
 pokazmagzyn(produkt)
+
+
+
+
+def pobieranie():
+    tempDict = {}
+    with open('temperatury_nowy_york.txt', 'r') as file:
+        for line in file:
+            tempDict.update({line[0:10]: line[11::].strip()})
+    return tempDict
+print(pobieranie())
