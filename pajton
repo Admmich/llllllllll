@@ -1818,7 +1818,11 @@ def zmienpoduskwmagaznie(produkt, produktt, ilosc):
     else:
         return f"{produktt} nie istnieje "
 
-def menu():
+def menu(produktt, cena):
+    if produktt in produkt:
+        return f"menu"
+    produkt[produktt] = {'produktt': produktt, 'cena': cena}
+    return f"produktt: {produktt} w menu"
     pass
 
 pokazmagzyn(produkt)
