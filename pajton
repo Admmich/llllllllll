@@ -1842,3 +1842,22 @@ def pobieranie():
             tempDict.update({line[0:10]: line[11::].strip()})
     return tempDict
 print(pobieranie())
+
+
+
+
+dane = pobieranie()
+tmplist= []
+for i in dane.values():
+    tmplist.append(i)
+
+iloscdni = 0
+tmpiloscdni = 1
+for i in range(len(tmplist)-1):
+    if tmplist[i] <= tmplist[i+1]:
+        tmpiloscdni += 1
+    else:
+        if iloscdni < tmpiloscdni:
+            iloscdni = tmpiloscdni
+        tmpiloscdni = 1
+print(iloscdni)
