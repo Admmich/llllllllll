@@ -1861,3 +1861,11 @@ for i in range(len(tmplist)-1):
             iloscdni = tmpiloscdni
         tmpiloscdni = 1
 print(iloscdni)
+
+
+srednia = sum(tmplist) / len(tmplist)
+tmp = []
+for i in tmplist:
+    if i < srednia:
+        tmp.append(i)
+print(len(tmp))
