@@ -1869,3 +1869,19 @@ for i in tmplist:
     if i < srednia:
         tmp.append(i)
 print(len(tmp))
+
+
+
+tmplist= []
+piatek=[]
+sobota=[]
+for i, j in enumerate(tmplist):
+    if i%7 == 0:
+        piatek.append(j)
+    if i % 7 == 0:
+        sobota.append(j)
+
+    sredniapiatek= sum(piatek) / len(piatek)
+    sredniasobota = sum(sobota) / len(sobota)
+print(sredniapiatek)
+print(sredniasobota)
