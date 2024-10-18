@@ -1885,3 +1885,23 @@ for i, j in enumerate(tmplist):
     sredniasobota = sum(sobota) / len(sobota)
 print(sredniapiatek)
 print(sredniasobota)
+
+
+
+p = []
+for k in dane.items():
+    p.append(k)
+print(p)
+
+data= []
+tmp= []
+for n in range(len(p)-1):
+    if p[n][1] > p[n + 1][1]:
+        tmp.append(p[n])
+    else:
+        if len(data) < len(tmp):
+            data = tmp
+            tmp= []
+        else:
+            tmp= []
+print(data)
