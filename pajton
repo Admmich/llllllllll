@@ -2055,79 +2055,65 @@ Definiujemy funkcję znajdz_min, która przyjmuje dwa argumenty:
 
 t: listę liczb,
 count: liczbę całkowitą, która określa, ile początkowych elementów listy t chcemy wziąć pod uwagę.
-python
-Skopiuj kod
+
     min_ = t[0]
 Inicjalizujemy zmienną min_ jako pierwszy element listy t. Ta zmienna będzie przechowywała najmniejszą wartość.
 
-python
-Skopiuj kod
+
     for i in range(0, int(count)):
         if t[i] < min_:
             min_ = t[i]
 Pętla for przechodzi przez pierwsze count elementów listy t. Jeżeli dany element t[i] jest mniejszy od min_, to aktualizujemy min_ do tej mniejszej wartości. Dzięki temu na końcu pętli min_ zawiera najmniejszą wartość spośród count początkowych elementów.
 
-python
-Skopiuj kod
+
     return min_
 Funkcja zwraca znalezioną najmniejszą wartość.
 
 Funkcja znajdz_max(t, count)
-python
-Skopiuj kod
+
 def znajdz_max(t, count):
 Definiujemy funkcję znajdz_max, która przyjmuje dwa argumenty:
 
 t: listę liczb,
 count: liczbę całkowitą, która określa, ile końcowych elementów listy t chcemy wziąć pod uwagę.
-python
-Skopiuj kod
+
     max_ = 0
 Inicjalizujemy zmienną max_ na 0. Będzie ona przechowywać największą wartość.
 
-python
-Skopiuj kod
+od
     for i in range(len(t)-count, len(t)):
         if t[i] > max_:
             max_ = t[i]
 Pętla for przechodzi przez ostatnie count elementów listy t. Jeśli dany element t[i] jest większy niż max_, to aktualizujemy max_ do tej większej wartości. Na końcu pętli max_ zawiera największą wartość spośród analizowanych elementów.
 
-python
-Skopiuj kod
+
     return max_
 Funkcja zwraca znalezioną największą wartość.
 
 Funkcja zeruj(t, p)
-python
-Skopiuj kod
+
 def zeruj(t, p):
 Definiujemy funkcję zeruj, która przyjmuje dwie listy t i p.
 
-python
-Skopiuj kod
+
     while len(t) >= 4:
 Pętla while działa tak długo, jak długo lista t ma długość co najmniej 4. To zapewnia, że będziemy mogli podzielić listę t na części.
 
-python
-Skopiuj kod
+
         m = math.floor(len(t)/4)
 Obliczamy m, czyli długość jednej czwartej listy t, zaokrągloną w dół. Dzielimy listę t na cztery części.
 
-python
-Skopiuj kod
+
         min_ = znajdz_min(t, m)
         max_ = znajdz_max(t, m)
 Wywołujemy funkcje znajdz_min i znajdz_max, aby znaleźć najmniejszy i największy element w pierwszej i ostatniej jednej czwartej listy t.
 
-python
-Skopiuj kod
         print("min - " + str(min_) + " max - " + str(max_))
         print(t)
         print(p)
 Wyświetlamy wartości minimalne i maksymalne oraz bieżące wartości list t i p.
 
-python
-Skopiuj kod
+
         for i in range(0, len(p)):
             if p[i] < min_:
                 p[i] = 0
@@ -2135,20 +2121,17 @@ Skopiuj kod
                 p[i] = 0
 Przechodzimy przez wszystkie elementy listy p. Jeśli dany element jest mniejszy od min_ lub większy od max_, zamieniamy go na 0.
 
-python
-Skopiuj kod
+
         x = []
         for i in range(m, len(t)-m):
             x.append(t[i])
 Tworzymy nową listę x, która zawiera elementy t z pominięciem pierwszych i ostatnich m elementów.
 
-python
-Skopiuj kod
+
         t = x
 Aktualizujemy t, przypisując do niej nową listę x.
 
-python
-Skopiuj kod
+
         print(p)
 Wyświetlamy aktualny stan listy p po dokonaniu zmian.
 
@@ -2201,8 +2184,7 @@ zeruj(t,p)
 Funkcja znajdz_min(t, count)
 Ta funkcja jest identyczna jak w poprzednim zadaniu i służy do znalezienia najmniejszego elementu w pierwszych count elementach listy t.
 
-python
-Skopiuj kod
+
 def znajdz_min(t, count):
     min_ = t[0]
     for i in range(0, int(count)):
@@ -2212,8 +2194,7 @@ def znajdz_min(t, count):
 Funkcja znajdz_max(t, count)
 Ta funkcja jest również identyczna jak wcześniej, ale może mieć ten sam potencjalny problem z inicjalizacją max_ na 0 (szczególnie jeśli wszystkie wartości w t są mniejsze od 0). Funkcja znajduje maksymalny element w ostatnich count elementach listy t.
 
-python
-Skopiuj kod
+
 def znajdz_max(t, count):
     max_ = 0
     for i in range(len(t)-count, len(t)):
@@ -2223,26 +2204,22 @@ def znajdz_max(t, count):
 Funkcja zeruj(t, p)
 Główna funkcja, zeruj, modyfikuje listę p na podstawie wartości z listy t.
 
-python
-Skopiuj kod
+
 def zeruj(t, p):
     while len(t) >= 4:
         m = int(len(t)/4)
 Pętla while działa tak długo, jak długo lista t ma co najmniej 4 elementy. Zmienna m to długość jednej czwartej listy t, zaokrąglona w dół.
 
-python
-Skopiuj kod
+
         min_ = znajdz_min(t, m)
         max_ = znajdz_max(t, m)
 Wywołujemy funkcje znajdz_min i znajdz_max, aby znaleźć minimalną i maksymalną wartość w pierwszej i ostatniej jednej czwartej listy t.
 
-python
-Skopiuj kod
+
         print("min - " + str(min_) + " max - " + str(max_))
 Wyświetlamy wartości minimalne i maksymalne.
 
-python
-Skopiuj kod
+
         for i in range(0, len(p)):
             if p[i] < min_:
                 p[i] = 0
@@ -2250,24 +2227,21 @@ Skopiuj kod
                 p[i] = 0
 Przechodzimy przez wszystkie elementy listy p i zerujemy te, które są mniejsze od min_ lub większe od max_.
 
-python
-Skopiuj kod
+
         x = []
         for i in range(m, len(t)-m):
             x.append(t[i])
         t = x
 Tworzymy nową listę x, zawierającą elementy t z pominięciem pierwszych i ostatnich m elementów, i przypisujemy ją z powrotem do t.
 
-python
-Skopiuj kod
+
     print(zlicz(p))
 Po zakończeniu pętli wywołujemy funkcję zlicz dla listy p i wyświetlamy jej wynik.
 
 Funkcja zlicz(p)
 Funkcja zlicz liczy, ile elementów w liście p jest równych 0.
 
-python
-Skopiuj kod
+
 def zlicz(p):
     count = 0
     i = 0
@@ -2279,8 +2253,7 @@ def zlicz(p):
 Pętla while przechodzi przez listę p i zwiększa zmienną count o 1 za każdym razem, gdy znajdzie element równy 0. Funkcja zwraca liczbę zerowych elementów w p.
 
 Sekcja główna programu
-python
-Skopiuj kod
+
 t = []
 p = []
 for num in range(0,9):
@@ -2350,8 +2323,7 @@ zeruj(t,p)
 ---------------------------------
 3
 Funkcja znajdz_min(t, count)
-python
-Skopiuj kod
+
 def znajdz_min(t, count):
 Definiujemy funkcję znajdz_min, która przyjmuje dwa argumenty:
 
@@ -2362,70 +2334,59 @@ Skopiuj kod
     min_ = t[0]
 Inicjalizujemy zmienną min_ jako pierwszy element listy t. Będzie ona przechowywała najmniejszą wartość w analizowanym zakresie.
 
-python
-Skopiuj kod
+
     for i in range(0, int(count)):
         if t[i] < min_:
             min_ = t[i]
 Pętla for przechodzi przez pierwsze count elementów listy t. Jeśli t[i] jest mniejsze od min_, przypisujemy min_ nową wartość t[i]. Dzięki temu na końcu min_ zawiera najmniejszy element w analizowanym zakresie.
 
-python
-Skopiuj kod
+
     return min_
 Funkcja zwraca znalezioną najmniejszą wartość.
 
 Funkcja znajdz_max(t, count)
-python
-Skopiuj kod
+
 def znajdz_max(t, count):
 Definiujemy funkcję znajdz_max, która przyjmuje dwa argumenty:
 
 t: listę liczb,
 count: liczbę elementów do przeanalizowania od końca listy t.
-python
-Skopiuj kod
+
     max_ = 0
 Inicjalizujemy max_ na 0. To będzie wartość początkowa dla maksymalnej wartości (warto zwrócić uwagę, że wartość 0 może być problematyczna, jeśli wszystkie liczby są ujemne).
 
-python
-Skopiuj kod
+
     for i in range(len(t)-count, len(t)):
         if t[i] > max_:
             max_ = t[i]
 Pętla przechodzi przez ostatnie count elementów listy t. Jeśli element t[i] jest większy od max_, przypisujemy nową wartość t[i] do max_.
 
-python
-Skopiuj kod
+
     return max_
 Funkcja zwraca największy znaleziony element.
 
 Funkcja zeruj(t, p)
 Główna funkcja zeruj modyfikuje listę p na podstawie wartości z listy t.
 
-python
-Skopiuj kod
+
 def zeruj(t, p):
     while len(t) >= 4:
 Pętla while działa, dopóki lista t ma co najmniej 4 elementy.
 
-python
-Skopiuj kod
+
         m = int(len(t)/4)
 Obliczamy jedną czwartą długości t (zaokrągloną w dół), zapisując wynik w m.
 
-python
-Skopiuj kod
+
         min_ = znajdz_min(t, m)
         max_ = znajdz_max(t, m)
 Znajdujemy najmniejszy element w pierwszych m elementach listy t i największy element w ostatnich m elementach.
 
-python
-Skopiuj kod
+
         print("min - " + str(min_) + " max - " + str(max_))
 Wyświetlamy wartości minimalne i maksymalne dla tej iteracji.
 
-python
-Skopiuj kod
+
         for i in range(0, len(p)):
             if p[i] < min_:
                 p[i] = 0
@@ -2433,15 +2394,13 @@ Skopiuj kod
                 p[i] = 0
 Przechodzimy przez wszystkie elementy listy p. Jeśli element jest mniejszy niż min_ lub większy niż max_, ustawiamy jego wartość na 0.
 
-python
-Skopiuj kod
+
         x = []
         for i in range(m, len(t)-m):
             x.append(t[i])
 Tworzymy nową listę x, zawierającą elementy t z pominięciem pierwszych i ostatnich m elementów.
 
-python
-Skopiuj kod
+
         t = x
 Przypisujemy nową wartość listy x do t, co skraca listę t o 2 * m elementów.
 
