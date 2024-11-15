@@ -2436,3 +2436,42 @@ def zeruj(t, p):
         for i in range(m, len(t)-m):
             x.append(t[i])
         t = x
+
+
+
+
+def pobierz(plik):
+    t = []
+    with open(plik, "r") as f:
+        for line in f:
+            t.append(line.split())
+    return t
+
+s1 = pobierz("dane_systemy1.txt")
+s2 = pobierz("dane_systemy2.txt")
+s3 = pobierz("dane_systemy3.txt")
+
+def systodec(liczba, sys):
+#    litery = ["A", "B", "C", "D", "E", "F"]
+    if liczba[0] == "-":
+        znak = -1
+        liczba.replace("-", "")
+    else:
+        znak = 1
+    wynik = 0
+    for i in range(len(liczba)):
+        if liczba[i].isnumeric():
+            wynik = wynik + int(liczba[i]) * sys ** (len(liczba)-1-i)
+        else:
+            tmp = ord(liczba[i])-55
+            wynik = wynik + tmp * sys ** (len(liczba)-1-i)
+    return wynik * znak
+
+print(systodec('1100', 2))
+
+s=[]
+for s in s1:
+    minimum = 10000000000
+    if minimum > systodec(s[1], 2):
+        minimum = systodec(s[1], 2)
+print(minimum)
