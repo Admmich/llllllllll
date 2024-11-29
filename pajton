@@ -2475,3 +2475,75 @@ for s in s1:
     if minimum > systodec(s[1], 2):
         minimum = systodec(s[1], 2)
 print(minimum)
+
+
+
+
+
+def pobierz(plik):
+    t = []  # Inicjalizacja pustej listy, w której będą przechowywane linie z pliku
+    with open(plik, "r") as f:  # Otwieranie pliku w trybie do odczytu
+        for line in f:  # Iterowanie po każdej linii w pliku
+            t.append(line.split())  # Dodanie linii podzielonej na elementy do listy `t`
+    return t  # Zwrócenie listy `t` jako wynik
+
+# Wczytanie danych z trzech plików do list
+s1 = pobierz("dane_systemy1.txt")
+s2 = pobierz("dane_systemy2.txt")
+s3 = pobierz("dane_systemy3.txt")
+
+def systodec(liczba, sys):
+    # Sprawdzenie, czy liczba jest ujemna
+    if liczba[0] == "-":
+        znak = -1  # Ustawienie znaku na -1
+        liczba = liczba[1:]  # Usunięcie znaku minus z liczby
+    else:
+        znak = 1  # Liczba jest dodatnia, znak = 1
+
+    wynik = 0  # Inicjalizacja wyniku na 0
+    for i in range(len(liczba)):  # iteracja przez wszystkie znaki liczby
+        if liczba[i].isnumeric():  # Sprawdzenie, czy znak jest cyfrą (0-9)
+            wynik += int(liczba[i]) * sys ** (len(liczba) - 1 - i)  # Dodanie wartości cyfry w odpowiedniej potędze
+        else:
+            # Zamiana liter A-F na wartości od 10 do 15 (np. 'A' -> 10)
+            tmp = ord(liczba[i].upper()) - 55
+            wynik += tmp * sys ** (len(liczba) - 1 - i)  # Dodanie wartości litery
+    return wynik * znak  # Zwrócenie wyniku z uwzględnieniem znaku liczby
+
+
+
+
+# Test konwersji liczby 1100 z systemu binarnego na dziesiętny
+print(systodec('1100', 2))
+
+# Znalezienie najmniejszej liczby w systemie binarnym z pliku `s1`
+minimum = float('inf')  # Inicjalizacja zmiennej `minimum` jako nieskończoność
+for s in s1:
+    liczba = systodec(s[1], 2)  # Konwersja drugiej kolumny na system dziesiętny
+    if minimum > liczba:  # Sprawdzenie, czy obecna liczba jest mniejsza od minimum
+        minimum = liczba  # Aktualizacja minimum
+print(minimum)  # Wypisanie najmniejszej liczby
+
+# Liczenie ile wierszy ma różne wartości w różnych systemach
+ile = 0  # Licznik niezgodnych wartości
+for i in range(len(s1)):
+    s1dec = systodec(s1[i][0], 2)  # Konwersja liczby z systemu binarnego
+    s2dec = systodec(s2[i][0], 4)  # Konwersja liczby z systemu czwórkowego
+    s3dec = systodec(s3[i][0], 8)  # Konwersja liczby z systemu ósemkowego
+    if s1dec != s2dec != s3dec:  # Sprawdzenie, czy wartości są różne w trzech systemach
+        ile += 1  # Zwiększenie licznika
+print(ile)  # Wypisanie liczby różnych wierszy
+
+# Szukanie maksymalnego skoku różnicy
+skokmax = 0  # Inicjalizacja maksymalnego skoku jako 0
+for i in range(len(s1)):
+    for j in range(i + 1, len(s1)):
+        liczba_i = systodec(s1[i][0], 2)  # Konwersja liczby z systemu binarnego
+        liczba_j = systodec(s1[j][0], 2)  # Konwersja liczby z systemu binarnego
+        rij = abs(liczba_i - liczba_j ** 2)  # Obliczenie różnicy wartości podniesionej do kwadratu
+        ij = abs(liczba_i - liczba_j)  # Obliczenie różnicy wartości liczbowych
+        if ij != 0:  # Sprawdzenie, czy różnica jest różna od zera
+            skok = round(rij / ij)  # Obliczenie wartości skoku
+            if skokmax < skok:  # Sprawdzenie, czy obecny skok jest większy od maksymalnego
+                skokmax = skok  # Aktualizacja maksymalnego skoku
+print(skokmax)  # Wypisanie maksymalnego skoku
