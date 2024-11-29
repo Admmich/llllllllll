@@ -2547,3 +2547,32 @@ for i in range(len(s1)):
             if skokmax < skok:  # Sprawdzenie, czy obecny skok jest większy od maksymalnego
                 skokmax = skok  # Aktualizacja maksymalnego skoku
 print(skokmax)  # Wypisanie maksymalnego skoku
+
+
+
+
+liczby = []
+fp = open('liczby.txt', 'r')
+for i in fp:
+    liczby.append(int(i))
+lista1 = []
+for j in liczby:
+    if j <= 1000:
+        lista1.append(j)
+
+print(lista1[-1])
+print(lista1[-2])
+
+liczby2 = []
+for x in liczby:
+    dz = 1
+    ileliczbdzielonych = 0
+    for y in range(x):
+        if x % dz == 0:
+            ileliczbdzielonych = ileliczbdzielonych + 1
+        dz += 1
+    liczby2.append(ileliczbdzielonych)
+print(liczby2)
+print(liczby2.count(18))
+
+
