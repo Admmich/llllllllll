@@ -2576,3 +2576,21 @@ print(liczby2)
 print(liczby2.count(18))
 
 
+with open(liczby.txt, r) as file:
+    for liczba in file:
+        liczby.append(int(liczba.strip()))
+print(liczby)
+
+liczby_pierwsze = []
+with open('pierwsze_przyklad.txt', 'r') as file:
+    for liczba in file:
+        liczby_pierwsze.append(int(liczba.strip()))
+print(liczby_pierwsze)
+
+def pierwsza(n):
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            return False
+        return True
+    
+
