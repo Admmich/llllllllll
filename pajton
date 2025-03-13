@@ -2730,3 +2730,41 @@ for _ in range(3):
 #zad2 247 182 247
 #zad3 205 141 120
 #zad 363 146 1098
+
+
+
+def nieparzysty(n):
+    skrot= ""
+    while n>0:
+        if (n % 10) % 2 != 0:
+            skrot = skrot + str(n%10)
+        n = n // 10
+    if skrot == "":
+        skrot = "nie istnieje"
+    return skrot
+
+print(nieparzysty(294762))
+print(nieparzysty(224))
+
+
+liczby = []
+with open("skrot_przyklad.txt") as f:
+        for liczba in f:
+            liczba.append(int(liczba))
+
+def nieparzysty(liczby):
+    ile = 0
+    liczbyskrot = []
+    for i in liczby:
+        skrot = ""
+        tmp = n
+        while n > 0:
+            if (n % 10) % 2 != 0:
+                skrot = str(n%10) + skrot
+            n = n // 10
+        if skrot == "":
+            liczbyskrot.append(tmp)
+            ile += 1
+    return (ile, max(liczbyskrot))
+
+print(nieparzysty(liczby))
